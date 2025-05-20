@@ -3,13 +3,15 @@ import React from "react";
 const FilterTabs = ({ filter, setFilter }) => {
   return (
     <div className="flex gap-4 mt-4">
-      {["all", "pending", "completed"].map((f) => (
+      {["all", "completed", "pending"].map((f) => (
         <button
-          key={f}
+          className={`px-4 py-1 rounded cursor-pointer ${
+            f === filter
+              ? "bg-blue-500 text-white "
+              : " text-black bg-gray-300 "
+          }  `}
           onClick={() => setFilter(f)}
-          className={`px-4 py-1 rounded ${
-            filter === f ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
+          key={f}
         >
           {f.charAt(0).toUpperCase() + f.slice(1)}
         </button>

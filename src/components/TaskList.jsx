@@ -6,17 +6,16 @@ const TaskList = ({ filter }) => {
   const { state } = useTask();
 
   const filteredTasks = state.tasks.filter((task) => {
-    if (filter === "completed") return task.completed;
-    if (filter === "pending") return !task.completed;
-
+    if (filter == "completed") return task.completed;
+    if (filter == "pending") return !task.completed;
     return true;
   });
 
+
   return (
     <div className="mt-4 w-full max-w-md">
-      {filteredTasks.map((task) => (
-        <TaskItem key={task.id} task={task} />
-      ))}
+      {filteredTasks &&
+        filteredTasks.map((task) => <TaskItem key={task.id} task={task} />)}
     </div>
   );
 };

@@ -5,7 +5,6 @@ import TaskList from "../components/TaskList";
 
 const Home = () => {
   const [filter, setFilter] = useState("all");
-
   return (
     <div className="w-full flex flex-col items-center">
       <AddTask />

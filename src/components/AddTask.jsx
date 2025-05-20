@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useTask } from "../context/TaskContext";
 import { v4 as uuidv4 } from "uuid";
-
 const AddTask = () => {
   const [text, setText] = useState("");
+
   const { dispatch } = useTask();
 
   const handleSubmit = () => {
@@ -17,19 +17,18 @@ const AddTask = () => {
 
   return (
     <div>
-      <p>Add Task</p>
       <input
         type="text"
-        placeholder="Enter the text"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        className="border p-2 rounded"
+        placeholder="Enter a task...  "
+        className="p-2 border-2 mr-4"
       />
       <button
         onClick={handleSubmit}
-        className="ml-2 bg-blue-500 text-white px-3 py-1 rounded"
+        className="bg-black p-2.5 text-white border-2 cursor-pointer hover:bg-white hover:text-black"
       >
-        Add +
+        Add Task
       </button>
     </div>
   );

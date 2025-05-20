@@ -1,15 +1,10 @@
-import { createContext, useContext, useReducer, useEffect } from "react";
+import { createContext, useContext, useReducer,useEffect } from "react";
 
 const initialState = { tasks: JSON.parse(localStorage.getItem("tasks")) || [] };
-
 const reducer = (state, action) => {
   switch (action.type) {
     case "add_task":
       return { tasks: [...state.tasks, action.payload] };
-    case "delete_task":
-      return {
-        tasks: state.tasks.filter((task) => task.id !== action.payload),
-      };
     case "toggle_task":
       return {
         tasks: state.tasks.map((task) =>
@@ -18,6 +13,11 @@ const reducer = (state, action) => {
             : task
         ),
       };
+    case "delete_task":
+      return {
+        tasks: state.tasks.filter((task) => task.id !== action.payload),
+      };
+
     default:
       return state;
   }

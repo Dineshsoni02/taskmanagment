@@ -3,6 +3,7 @@ import { useTask } from "../context/TaskContext";
 
 const TaskItem = ({ task }) => {
   const { dispatch } = useTask();
+
   return (
     <div className="flex items-center justify-between border p-2 my-2 rounded bg-white shadow-sm">
       <span
@@ -16,10 +17,11 @@ const TaskItem = ({ task }) => {
         {task.text}
       </span>
       <button
-        className="text-red-500"
+        className="text-red-500 font-medium cursor-pointer
+        "
         onClick={() => dispatch({ type: "delete_task", payload: task.id })}
       >
-        ❌
+        X
       </button>
     </div>
   );
