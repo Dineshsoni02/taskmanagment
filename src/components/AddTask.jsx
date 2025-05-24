@@ -28,7 +28,7 @@ const AddTask = () => {
         onClick={handleSubmit}
         className="bg-black p-2.5 text-white border-2 cursor-pointer hover:bg-white hover:text-black"
       >
-        Add Task
+        Add Task +
       </button>
     </div>
   );
